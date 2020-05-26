@@ -1,25 +1,24 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import React from 'react';
 import Header from '../shared/header';
-import Home from '../screens/HomeScreen';
+import Home from '../screens/home';
 import ReviewDetails from '../screens/reviewDetails';
-import HomeScreen from '../screens/HomeScreen';
 
 const screens = {
   Home: {
-    screen: HomeScreen,
+    screen: Home,
     navigationOptions: ({ navigation }) => {
       return {
-        headerTitle: () => <Header title='VPDU' navigation={navigation} />
+        headerTitle: () => <Header title='GameZone' navigation={navigation} />
       }
     },
   },
-//   ReviewDetails: {
-//     screen: ReviewDetails,
-//     navigationOptions: {
-//       title: 'Review Details',
-//     }
-//   },
+  ReviewDetails: {
+    screen: ReviewDetails,
+    navigationOptions: {
+      title: 'Review Details',
+    }
+  },
 };
 
 // home stack navigator screens
@@ -31,3 +30,5 @@ const HomeStack = createStackNavigator(screens, {
 });
 
 export default HomeStack;
+
+
