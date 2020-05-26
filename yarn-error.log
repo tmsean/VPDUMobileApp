@@ -1,0 +1,67 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\sontm.aits\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Oracle\Middleware\as_1\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Business Objects\common\3.5\bin\NOTES\;C:\Program Files (x86)\Business Objects\common\3.5\bin\NOTES\DATA\;C:\app\caidat.hant\product\12.1.0\client_1;C:\app\caidat.hant\product\12.1.0\client_1\bin;C:\Oracle\Middleware\as_2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;C:\Oracle\Middleware\as_2\opmn\bin;C:\Oracle\Middleware\as_2\opmn\lib;C:\Oracle\Middleware\as_2\perl\bin;C:\Program Files\EmEditor;C:\Oracle\Middleware\as_1\opmn\bin;C:\Oracle\Middleware\as_1\opmn\lib;C:\Oracle\Middleware\as_1\perl\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\nodejs\;C:\Users\sontm.aits\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\sontm.aits\AppData\Local\Programs\Python\Python38-32\;C:\Users\sontm.aits\AppData\Local\Microsoft\WindowsApps;C:\Users\sontm.aits\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\sontm.aits\AppData\Roaming\npm;C:\Users\sontm.aits\AppData\Local\Programs\Git\cmd
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  14.1.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: connect ETIMEDOUT 140.82.113.4:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1142:16)
+
+npm manifest: 
+  {
+    "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "web": "expo start --web",
+      "eject": "expo eject",
+      "test": "jest --watchAll"
+    },
+    "jest": {
+      "preset": "jest-expo"
+    },
+    "dependencies": {
+      "@expo/vector-icons": "~10.0.6",
+      "@react-native-community/masked-view": "0.1.6",
+      "@react-navigation/bottom-tabs": "^5.3.1",
+      "@react-navigation/native": "^5.2.1",
+      "@react-navigation/stack": "^5.2.16",
+      "expo": "~37.0.9",
+      "expo-asset": "~8.1.0",
+      "expo-constants": "~9.0.0",
+      "expo-font": "~8.1.0",
+      "expo-linking": "^1.0.1",
+      "expo-splash-screen": "^0.2.3",
+      "expo-web-browser": "~8.2.0",
+      "react": "~16.9.0",
+      "react-dom": "~16.9.0",
+      "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
+      "react-native-gesture-handler": "~1.6.0",
+      "react-native-safe-area-context": "0.7.3",
+      "react-native-screens": "~2.2.0",
+      "react-native-web": "~0.11.7"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.8.6",
+      "babel-preset-expo": "~8.1.0",
+      "jest-expo": "~37.0.0"
+    },
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
