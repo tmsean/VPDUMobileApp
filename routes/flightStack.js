@@ -1,34 +1,31 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import React from 'react';
 import Header from '../shared/header';
-import Home from '../screens/home';
-import ReviewDetails from '../screens/reviewDetails';
+import Flight from '../screens/flight';
+import FlightDetails from '../screens/flightDetails';
 
 const screens = {
-  Home: {
-    screen: Home,
+  Flight: {
+    screen: Flight,
     navigationOptions: ({ navigation }) => {
       return {
         headerTitle: () => <Header title='VPDU' navigation={navigation} />
       }
     },
   },
-  ReviewDetails: {
-    screen: ReviewDetails,
+  FlightDetails: {
+    screen: FlightDetails,
     navigationOptions: {
-      title: 'Review Details',
+      title: 'Flight Details',
     }
   },
-};
+}
 
-// home stack navigator screens
-const HomeStack = createStackNavigator(screens, {
+const FlightStack = createStackNavigator(screens, {
   defaultNavigationOptions: {
     headerTintColor: '#444',
-    headerStyle: { backgroundColor: '#eee', height: 60 }
+    headerStyle: { backgroundColor: '#eee', height: 60 },
   }
 });
 
-export default HomeStack;
-
-
+export default FlightStack;
