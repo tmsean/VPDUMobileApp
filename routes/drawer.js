@@ -5,7 +5,7 @@ import { createAppContainer } from 'react-navigation';
 import AboutStack from './aboutStack';
 import FlightStack from './flightStack';
 import ShiftStack from './shiftStack';
-import FlightDetailsStack from './flightDetailsStack';
+import SupplyStack from './supplyStack';
 
 // drawer navigation options
 const RootDrawerNavigator = createDrawerNavigator({
@@ -18,9 +18,9 @@ const RootDrawerNavigator = createDrawerNavigator({
   Shift: {
     screen: ShiftStack,
   },
-  FlightDetails: {
-    screen: FlightDetailsStack,
-  }
+  Supply: {
+    screen: SupplyStack,
+  },
 });
 
 export default createAppContainer(RootDrawerNavigator);

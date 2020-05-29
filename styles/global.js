@@ -28,6 +28,9 @@ export const globalStyles = StyleSheet.create({
     marginTop: 6,
     textAlign: 'center',
   },
+  button: {
+    color: '#0BC586'
+  },
 });
 
 export const images = {

@@ -65,6 +65,7 @@ export default function ReviewForm({ addReview }) {
             <Text style={globalStyles.errorText}>{props.touched.rating && props.errors.rating}</Text>
             
             <FlatButton onPress={props.handleSubmit} text='submit' />
+            
           </View>
         )}
       </Formik>
