@@ -9,7 +9,7 @@ export default function Header({ title, navigation }) {
   }
 
   return (
-    <ImageBackground source={require('../assets/vnabg.png')} style={styles.header}>
+    <ImageBackground source={require('../assets/vnabg2.png')} style={styles.header}>
       <MaterialIcons name='menu' size={28} onPress={openMenu} style={styles.icon} />
       <View style={styles.headerTitle}>
         <Image source={require('../assets/images/skyteamlogo.png')} style={styles.headerImage} />

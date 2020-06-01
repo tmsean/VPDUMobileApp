@@ -30,7 +30,7 @@ export default function FlightDetails({ navigation }) {
     },
   ]);
   const item = flights.find(item => item.flight_No === navigation.getParam( 'item', 'flight_No'));
-  const flight_number = navigation.getParam( 'item', 'flight_No');
+  const flight_number = navigation.getParam( 'item', 'flight_No').toString();
 
 
   return (
@@ -41,7 +41,7 @@ export default function FlightDetails({ navigation }) {
         <Text>{ navigation.getParam('sector') }</Text>)}
         </div> */}
         <Card>
-        <Text>{navigation.getParam('itemID')}</Text>
+        <Text>{navigation.getParam('item', 'flight_No')}</Text>
         {/* <Text style={globalStyles.titleText}>
           { navigation.getParam( 'item', 'flight_No') }
         </Text> */}

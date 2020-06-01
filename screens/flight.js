@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Text, FlatList} from 'react-native';
+import React, { useState } from 'react';  
+import { StyleSheet, View, Text, TouchableOpacity, FlatList, Modal,
+  TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { globalStyles } from '../styles/global';
 import Card from '../shared/card';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { MaterialIcons } from '@expo/vector-icons';
+import ReviewForm from '../screens/reviewForm';
+import FlightForm from '../screens/flightForm';
 
 export default function Flight({navigation}) {
-    const [flights, setFLights] = useState([
+    const [modalOpen, setModalOpen] = useState(false);
+    const [flights, setFlights] = useState([
         {
           id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
           flight_No: 'VN4790',
@@ -28,6 +32,22 @@ export default function Flight({navigation}) {
           to_date: '03-03-2020'
         },
       ]);
+
+      const addFlight = (flight) => {
+        flight.id = Math.random().toString();
+        setFlights((currentFlights) => {
+          return [flight, ...currentFlights];
+        });
+        setModalOpen(false);
+      };
+
+      const addReview = (review) => {
+        review.key = Math.random().toString();
+        setReviews((currentReviews) => {
+          return [review, ...currentReviews];
+        });
+        setModalOpen(false);
+      };
     
     return (
       //   <View style={globalStyles.container}>
@@ -41,6 +61,27 @@ export default function Flight({navigation}) {
       // )} />
       //   </View>
       <View style={globalStyles.container}>
+
+        <Modal visible={modalOpen} animationType='slide'>
+          <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <View style={styles.modalContent}>
+              <MaterialIcons 
+                name='close'
+                size={24} 
+                style={{...styles.modalToggle, ...styles.modalClose}} 
+                onPress={() => setModalOpen(false)} 
+              />
+              <FlightForm addFlight={addFlight} />
+            </View>
+          </TouchableWithoutFeedback>
+        </Modal>
+
+        <MaterialIcons 
+          name='add' 
+          size={24} 
+          style={styles.modalToggle}
+          onPress={() => setModalOpen(true)} 
+        />
         <Text>Flight Screen</Text>
         <FlatList data = {flights} renderItem={({item}) => (
           <TouchableOpacity onPress={() => navigation.push('FlightDetails', {item: item.flight_No})}>

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, FlatList, Modal,
-  TouchableWithoutFeedback, Keyboard } from 'react-native';
+  TouchableWithoutFeedback, Keyboard, Button } from 'react-native';
 import { globalStyles } from '../styles/global';
 import Card from '../shared/card';
+import SupplyForm from '../screens/supplyForm';
+import { MaterialIcons } from '@expo/vector-icons';
 
 export default function Supply({navigation}) {
+  const [modalOpen, setModalOpen] = useState(false);
   const [flights, setFLights] = useState([
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -51,19 +54,49 @@ export default function Supply({navigation}) {
       real_quantity: '20'
     },
   ]);
+  const addSupply = (supply) => {
+    supply.id = Math.random().toString();
+    setSupplies((currentSupplies) => {
+      return [supply, ...currentSupplies];
+    });
+    setModalOpen(false);
+  };
+  
   const item = flights.find(item => item.flight_No === navigation.getParam('item', 'flight_No'));
   const flight_number = navigation.getParam('flight_number');
 
   return (
     <View style={globalStyles.container}>
+
+      <Modal visible={modalOpen} animationType='slide'>
+          <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <View style={styles.modalContent}>
+              <MaterialIcons 
+                name='close'
+                size={24} 
+                style={{...styles.modalToggle, ...styles.modalClose}} 
+                onPress={() => setModalOpen(false)} 
+              />
+              <SupplyForm addSupply={addSupply} />
+            </View>
+          </TouchableWithoutFeedback>
+        </Modal>
+
       <Text>List of supplies from flight {flight_number}</Text>
       <FlatList data={supplies} renderItem={({ item }) => (
-        <TouchableOpacity onPress={() => navigation.navigate('SupplyDetails', {item: id})}>
+        <TouchableOpacity onPress={() => navigation.navigate('SupplyDetails', {item: item.id})}>
           <Card>
             <Text style={globalStyles.titleText}>{ item.name }</Text>
+            <Text> {item.id}</Text>
           </Card>
         </TouchableOpacity>
       )} />
+      
+    <Button
+        title="Add"
+        color = "#0BC586"
+        onPress={() => setModalOpen(true)}>
+    </Button>
     </View>
   );
 }

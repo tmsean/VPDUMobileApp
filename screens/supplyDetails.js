@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, Image, FlatList, Button } from 'react-native';
 import { globalStyles, images } from '../styles/global';
 import Card from '../shared/card';
-import Supply from './supply';
+
 
 export default function SupplyDetails({ navigation }) {
   const [supplies, setSupplies] = useState([
@@ -28,38 +28,18 @@ export default function SupplyDetails({ navigation }) {
       real_quantity: '20'
     },
   ]);
-  const item = supplies.find(item => item.id === navigation.getParam( 'item', 'id'));
+  const supply = supplies.find(item => item.id === navigation.getParam( 'item', 'id'));
   const id = navigation.getParam( 'item', 'id');
 
 
   return (
     <View style={globalStyles.container}>
         <Text style={globalStyles.titleText}>Supplies details Page</Text>
-        {/* {/* <div>
-        {navigation.map(image => 
-        <Text>{ navigation.getParam('sector') }</Text>)}
-        </div> */}
         <Card>
-        <Text>{navigation.getParam('item','id')}</Text>
-        {/* <Text style={globalStyles.titleText}>
-          { navigation.getParam( 'item', 'id') }
-        </Text> */}
-        {/* <Text>{ navigation.getParam('sector') }</Text>
-        {/* <View style={styles.rating}>
-          <Text>GameZone rating: </Text>
-          <Image source={images.ratings[rating]} />
-        </View> */}
-        {/* <Text>{ "Sector: " + item.sector }</Text>
-        <Text>{ "From date: " + item.from_date } { "To date: " + item.to_date }</Text> */}
-        <Button
-          title="Supplies"
-          onPress={() => {
-            // Pass params back to home screen
-            navigation.navigate('Supply', flight_number);
-          }}
-        />
-      </Card> */}
-      
+          <Text>{supply.name}</Text>
+          <Text>So luong tiep vien nhap: {supply.stewardess_quantity} {supply.unit} </Text>
+          <Text>So luong thuc te: {supply.real_quantity} {supply.unit}</Text>
+        </Card>
     </View>
   );
 }
