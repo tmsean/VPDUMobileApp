@@ -84,7 +84,7 @@ export default function Flight({navigation}) {
         />
         <Text>Flight Screen</Text>
         <FlatList data = {flights} renderItem={({item}) => (
-          <TouchableOpacity onPress={() => navigation.push('FlightDetails', {item: item.flight_No})}>
+          <TouchableOpacity onPress={() => navigation.push('FlightDetails', {item: item.id})}>
             <Card>
               <Text style={globalStyles.titleText}>{item.flight_No}</Text>
             </Card>

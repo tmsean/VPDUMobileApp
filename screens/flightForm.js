@@ -31,7 +31,10 @@ export default function FlightForm({ addFlight }) {
       
     <View style={globalStyles.container}>
       <Formik
-        initialValues={{ title: '', body: '', rating: '' }}
+        initialValues={{ flight_No: 'VN777',
+        sector: 'DADSGN',
+        from_date: '01-03-2020',
+        to_date: '03-03-2020' }}
         validationSchema={FlightSchema}
         onSubmit={(values, actions) => {
           actions.resetForm(); 

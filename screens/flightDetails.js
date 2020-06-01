@@ -29,7 +29,7 @@ export default function FlightDetails({ navigation }) {
       to_date: '03-03-2020'
     },
   ]);
-  const item = flights.find(item => item.flight_No === navigation.getParam( 'item', 'flight_No'));
+  const item = flights.find(item => item.id === navigation.getParam( 'item', 'id'));
   const flight_number = navigation.getParam( 'item', 'flight_No').toString();
 
 

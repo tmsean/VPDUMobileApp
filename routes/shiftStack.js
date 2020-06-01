@@ -1,16 +1,23 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import React from 'react';
 import Header from '../shared/header';
-import Flight from '../screens/flight';
+import Shift from '../screens/shift';
+import ShiftDetails from '../screens/shiftDetails';
 
 const screens = {
   Shift: {
-    screen: Flight,
+    screen: Shift,
     navigationOptions: ({ navigation }) => {
       return {
         headerTitle: () => <Header title='VPDU' navigation={navigation} />
       }
     },
+  },
+  ShiftDetails: {
+    screen: ShiftDetails,
+    navigationOptions: {
+      title: 'Shift Details',
+    }
   },
 }
 

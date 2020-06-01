@@ -5,7 +5,8 @@ import { globalStyles } from '../styles/global';
 import Card from '../shared/card';
 import { MaterialIcons } from '@expo/vector-icons';
 import ReviewForm from '../screens/reviewForm';
-import shiftForm from '../screens/shiftForm';
+import About from '../screens/about';
+// import shiftForm from '../screens/shiftForm';
 
 export default function shift({navigation}) {
     const [modalOpen, setModalOpen] = useState(false);
@@ -75,10 +76,10 @@ export default function shift({navigation}) {
         /> */}
         <Text>Shift Screen</Text>
         <FlatList data = {shifts} renderItem={({item}) => (
-          <TouchableOpacity onPress={() => navigation.push('ShiftDetails', {item: item.shift_no})}>
+          <TouchableOpacity onPress={() => navigation.navigate('ShiftDetails', {item: item.id})}>
             <Card>
-              <Text style={globalStyles.titleText}>{item.date}</Text>
-              <Text style={globalStyles.titleText}>{item.shift_no}</Text>
+              <Text style={globalStyles.titleText}>Ngày: {item.date}</Text>
+              <Text style={globalStyles.titleText}>Ca: {item.shift_no}</Text>
             </Card>
           </TouchableOpacity>
         )}>
