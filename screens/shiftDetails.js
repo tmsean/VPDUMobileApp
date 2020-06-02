@@ -37,8 +37,8 @@ export default function ShiftDetails({ navigation }) {
         <Text style={globalStyles.titleText}>Shifts details Page</Text>
         <Card>
           <Text>Ca {shift.shift_no}</Text>
-          <Text>Ngày: {shift.date} </Text>
-          <Text>Loại : {shift.type}</Text>
+          <Text>Ngày {shift.date} </Text>
+          <Text>Loại {shift.type}</Text>
         </Card>
     </View>
   );
