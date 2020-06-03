@@ -62,7 +62,7 @@ export default function Supply({navigation}) {
     setModalOpen(false);
   };
   
-  const item = flights.find(item => item.flight_No === navigation.getParam('item', 'flight_No'));
+  const item = flights.find(item => item.flight_No === navigation.getParam('current_flight', 'flight_No'));
   const flight_number = navigation.getParam('flight_number');
 
   return (

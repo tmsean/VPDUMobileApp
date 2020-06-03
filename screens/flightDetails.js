@@ -41,7 +41,7 @@ export default function FlightDetails({ navigation }) {
         <Text>{ navigation.getParam('sector') }</Text>)}
         </div> */}
         <Card>
-        <Text>{navigation.getParam('item', 'flight_No')}</Text>
+        <Text>Chuyến bay {item.flight_No}</Text>
         {/* <Text style={globalStyles.titleText}>
           { navigation.getParam( 'item', 'flight_No') }
         </Text> */}

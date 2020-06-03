@@ -80,6 +80,7 @@ export default function shift({navigation}) {
             <Card>
               <Text style={globalStyles.titleText}>Ngày: {item.date}</Text>
               <Text style={globalStyles.titleText}>Ca: {item.shift_no}</Text>
+              <Text style={globalStyles.titleText}>Loại: {item.type}</Text>
             </Card>
           </TouchableOpacity>
         )}>
