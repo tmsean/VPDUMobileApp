@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, Image, FlatList, Button } from 'react-native';
 import { globalStyles, images } from '../styles/global';
 import Card from '../shared/card';
+import Suppy from '../screens/supply';
 
 
 export default function ShiftDetails({ navigation }) {
@@ -40,6 +41,12 @@ export default function ShiftDetails({ navigation }) {
           <Text>Ngày {shift.date} </Text>
           <Text>Loại {shift.type}</Text>
         </Card>
+        <Button
+        style={globalStyles.button}
+        title = "Supplies"
+        color = "#0BC586"
+        onPress = {() => navigation.push("Suppy")}
+        accessibilityLabel="Learn more about this purple button" ></Button>
     </View>
   );
 }

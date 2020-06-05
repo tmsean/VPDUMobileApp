@@ -6,6 +6,7 @@ import Card from '../shared/card';
 import { MaterialIcons } from '@expo/vector-icons';
 import ReviewForm from '../screens/reviewForm';
 import FlightForm from '../screens/flightForm';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default function Flight({navigation}) {
     const [modalOpen, setModalOpen] = useState(false);
@@ -13,21 +14,24 @@ export default function Flight({navigation}) {
         {
           id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
           flight_No: 'VN4790',
-          sector: 'HANSGN',
+          sector: 'HAN',
+          destination: 'SGN',
           from_date: '01-03-2020',
           to_date: '03-03-2020'
         },
         {
           id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
           flight_No: 'VN777',
-          sector: 'DADSGN',
+          sector: 'HAN',
+          destination: 'SGN',
           from_date: '01-03-2020',
           to_date: '03-03-2020'
         },
         {
           id: '58694a0f-3da1-471f-bd96-145571e29d72',
           flight_No: 'VN803',
-          sector: 'HANDAD',
+          sector: 'HAN',
+          destination: 'SGN',
           from_date: '01-03-2020',
           to_date: '03-03-2020'
         },
@@ -86,6 +90,7 @@ export default function Flight({navigation}) {
         <FlatList data = {flights} renderItem={({item}) => (
           <TouchableOpacity onPress={() => navigation.push('FlightDetails', {item: item.id})}>
             <Card>
+              <Ionicons name="ios-airplane" color="#fff" size={16} />
               <Text style={globalStyles.titleText}>{item.flight_No}</Text>
             </Card>
           </TouchableOpacity>

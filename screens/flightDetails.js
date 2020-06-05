@@ -4,33 +4,39 @@ import { globalStyles, images } from '../styles/global';
 import Card from '../shared/card';
 import Flight from '../screens/flight';
 import Supply from '../screens/supply';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default function FlightDetails({ navigation }) {
   const [flights, setFLights] = useState([
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
       flight_No: 'VN4790',
-      sector: 'HANSGN',
+      sector: 'HAN',
+      destination: 'SGN',
       from_date: '01-03-2020',
       to_date: '03-03-2020'
     },
     {
       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
       flight_No: 'VN777',
-      sector: 'DADSGN',
+      origin: 'DAD',
+      destination: 'SGN',
       from_date: '01-03-2020',
       to_date: '03-03-2020'
     },
     {
       id: '58694a0f-3da1-471f-bd96-145571e29d72',
       flight_No: 'VN803',
-      sector: 'HANDAD',
+      sector: 'HAN',
+      destination: 'DAD',
       from_date: '01-03-2020',
       to_date: '03-03-2020'
     },
   ]);
   const item = flights.find(item => item.id === navigation.getParam( 'item', 'id'));
-  const flight_number = navigation.getParam( 'item', 'flight_No').toString();
+  const flight_number = item.flight_No;
+  const from_date = new Date();
+  from_date = item.from_date;
 
 
   return (
@@ -50,8 +56,9 @@ export default function FlightDetails({ navigation }) {
           <Text>GameZone rating: </Text>
           <Image source={images.ratings[rating]} />
         </View> */}
-        <Text>{ "Sector: " + item.sector }</Text>
-        <Text>{ "From date: " + item.from_date } { "To date: " + item.to_date }</Text>
+        <Text>{ "Origin: " + item.origin } 
+        <ion-icon name="airplane-outline"></ion-icon> {"Destination: " + item.destination}</Text>
+        <Text>{ "From date: " + item.from_date } - { "To date: " + item.to_date }</Text>
         <Button
           title="Supplies"
           onPress={() => {
