@@ -4,7 +4,6 @@ import { globalStyles, images } from '../styles/global';
 import Card from '../shared/card';
 import Flight from '../screens/flight';
 import Supply from '../screens/supply';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default function FlightDetails({ navigation }) {
   const [flights, setFLights] = useState([
@@ -36,7 +35,6 @@ export default function FlightDetails({ navigation }) {
   const item = flights.find(item => item.id === navigation.getParam( 'item', 'id'));
   const flight_number = item.flight_No;
   const from_date = new Date();
-  from_date = item.from_date;
 
 
   return (
@@ -56,8 +54,7 @@ export default function FlightDetails({ navigation }) {
           <Text>GameZone rating: </Text>
           <Image source={images.ratings[rating]} />
         </View> */}
-        <Text>{ "Origin: " + item.origin } 
-        <ion-icon name="airplane-outline"></ion-icon> {"Destination: " + item.destination}</Text>
+        <Text>{ "Origin: " + item.origin } {"Destination: " + item.destination}</Text>
         <Text>{ "From date: " + item.from_date } - { "To date: " + item.to_date }</Text>
         <Button
           title="Supplies"
