@@ -17,7 +17,8 @@ export default function Flight({navigation}) {
           sector: 'HAN',
           destination: 'SGN',
           from_date: '01-03-2020',
-          to_date: '03-03-2020'
+          to_date: '03-03-2020',
+          type: 'Cấp lên',
         },
         {
           id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
@@ -25,7 +26,8 @@ export default function Flight({navigation}) {
           sector: 'HAN',
           destination: 'SGN',
           from_date: '01-03-2020',
-          to_date: '03-03-2020'
+          to_date: '03-03-2020',
+          type: 'Cấp lên',
         },
         {
           id: '58694a0f-3da1-471f-bd96-145571e29d72',
@@ -33,7 +35,8 @@ export default function Flight({navigation}) {
           sector: 'HAN',
           destination: 'SGN',
           from_date: '01-03-2020',
-          to_date: '03-03-2020'
+          to_date: '03-03-2020',
+          type: 'Thu hồi',
         },
       ]);
 

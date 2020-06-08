@@ -10,10 +10,11 @@ export default function FlightDetails({ navigation }) {
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
       flight_No: 'VN4790',
-      sector: 'HAN',
+      origin: 'HAN',
       destination: 'SGN',
       from_date: '01-03-2020',
-      to_date: '03-03-2020'
+      to_date: '03-03-2020',
+      type: 'Cấp lên',
     },
     {
       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
@@ -21,19 +22,20 @@ export default function FlightDetails({ navigation }) {
       origin: 'DAD',
       destination: 'SGN',
       from_date: '01-03-2020',
-      to_date: '03-03-2020'
+      to_date: '03-03-2020',
+      type: 'Cấp lên',
     },
     {
       id: '58694a0f-3da1-471f-bd96-145571e29d72',
       flight_No: 'VN803',
-      sector: 'HAN',
+      origin: 'HAN',
       destination: 'DAD',
       from_date: '01-03-2020',
-      to_date: '03-03-2020'
+      to_date: '03-03-2020',
+      type: 'Thu hồi',
     },
   ]);
   const item = flights.find(item => item.id === navigation.getParam( 'item', 'id'));
-  const flight_number = item.flight_No;
   const from_date = new Date();
 
 
@@ -45,7 +47,7 @@ export default function FlightDetails({ navigation }) {
         <Text>{ navigation.getParam('sector') }</Text>)}
         </div> */}
         <Card>
-        <Text>Chuyến bay {item.flight_No}</Text>
+        <Text>Chuyến bay {item.flight_No} loại {item.type}</Text>
         {/* <Text style={globalStyles.titleText}>
           { navigation.getParam( 'item', 'flight_No') }
         </Text> */}

@@ -2,52 +2,37 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, Image, FlatList, Button } from 'react-native';
 import { globalStyles, images } from '../styles/global';
 import Card from '../shared/card';
-import Suppy from '../screens/supply';
 
 
-export default function ShiftDetails({ navigation }) {
-    const [shifts, setShifts] = useState([
+export default function SupplyDetails({ navigation }) {
+    const [supplies, setSupplies] = useState([
         {
-          id: '1',
-          date: '11-05-2020',
-          shift_no: '1',
-          type: 'Dùng được',
-          status: 'DANG NHAP'
+          id: 'NCH337E',
+          name: 'DIA SU PHANG',
+          unit: 'CAI',
+          quantity: '11',
+          creator: 'Nhân viên QLKH'
         },
         {
-          id: '2',
-          date: '11-05-2020',
-          shift_no: '2',
-          type: 'Dùng được',
-          to_date: 'DANG NHAP'
-        },
-        {
-          id: '3',
-          date: '11-05-2020',
-          shift_no: '2',
-          type: 'Thải loại',
-          status: 'DANG NHAP'
-        },
+            id: 'NCH343E',
+            name: 'DIA SU M2 ML Loại 2',
+            unit: 'CAI',
+            quantity: '7',
+            creator: 'Nhân viên QLKH'
+          },
       ]);
-  const shift = shifts.find(item => item.id === navigation.getParam( 'item', 'id'));
+  const supply = supplies.find(item => item.id === navigation.getParam( 'item', 'id'));
   const id = navigation.getParam( 'item', 'id');
 
 
   return (
     <View style={globalStyles.container}>
-        <Text style={globalStyles.titleText}>Shifts details Page</Text>
+        <Text style={globalStyles.titleText}>Supplies details Page</Text>
         <Card>
-          <Text>Ca {shift.shift_no}</Text>
-          <Text>Ngày {shift.date} </Text>
-          <Text>Loại {shift.type.toLowerCase()}</Text>
-          <Text>Trạng thái {shift.status}</Text>
+          <Text>{supply.name}</Text>
+          <Text>So luong tiep vien nhap: {supply.stewardess_quantity} {supply.unit} </Text>
+          <Text>So luong thuc te: {supply.real_quantity} {supply.unit}</Text>
         </Card>
-        <Button
-        style={globalStyles.button}
-        title = "Supplies"
-        color = "#0BC586"
-        onPress = {() => navigation.push("Suppy")}
-        accessibilityLabel="Learn more about this purple button" ></Button>
     </View>
   );
 }
