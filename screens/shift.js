@@ -4,8 +4,8 @@ import { StyleSheet, View, Text, TouchableOpacity, FlatList, Modal,
 import { globalStyles } from '../styles/global';
 import Card from '../shared/card';
 import { MaterialIcons } from '@expo/vector-icons';
-import ReviewForm from '../screens/reviewForm';
 import About from '../screens/about';
+import { SearchBar } from 'react-native-elements';
 // import shiftForm from '../screens/shiftForm';
 
 export default function shift({navigation}) {
@@ -41,6 +41,7 @@ export default function shift({navigation}) {
         setModalOpen(false);
       };
     
+    
     return (
       //   <View style={globalStyles.container}>
       //   <Text>shift Screen</Text>
@@ -73,7 +74,12 @@ export default function shift({navigation}) {
           size={24} 
           style={styles.modalToggle}
           onPress={() => setModalOpen(true)} 
-        /> */}
+        /> */}      
+        <SearchBar
+          placeholder="Type Here..."
+          //onChangeText={this.updateSearch}
+          //value={}
+        />
         <Text>Shift Screen</Text>
         <FlatList data = {shifts} renderItem={({item}) => (
           <TouchableOpacity onPress={() => navigation.navigate('ShiftDetails', {item: item.id})}>

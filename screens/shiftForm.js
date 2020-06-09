@@ -8,16 +8,13 @@ import FlatButton from '../shared/button.js';
 const SupplySchema = yup.object({
   name: yup.string()
     .required()
-    .min(10),
-  unit: yup.string()
-    .required()
-    .min(3),
-  quanitity: yup.string()
-    .required()
-    .min(3),
-  creator: yup.string()
-    .required()
     .min(5),
+  unit: yup.string()
+    .required(),
+  stewardess_quantity: yup.string()
+    .required(),
+  real_quantity: yup.string()
+    .required()
 //   rating: yup.string()
 //     .required()
 //     .test('is-num-1-5', 'Rating must be a number 1 - 5', (val) => {
@@ -25,19 +22,17 @@ const SupplySchema = yup.object({
 //     }),
 });
 
-export default function ShiftSupplyForm({ addSupply }) {
+export default function SupplyForm({ addSupply }) {
 
   return (
       
     <View style={globalStyles.container}>
       <Formik
-        initialValues={{
-          id: 'NCH337E',
-          name: 'DIA SU PHANG',
-          unit: 'CAI',
-          quantity: '11',
-          creator: 'Nhân viên QLKH'
-        }}
+        initialValues={{ id: '1',
+        date: '11-05-2020',
+        shift_no: '1',
+        type: 'Dùng được',
+        status: 'DANG NHAP' }}
         validationSchema={SupplySchema}
         onSubmit={(values, actions) => {
           actions.resetForm();
@@ -46,10 +41,9 @@ export default function ShiftSupplyForm({ addSupply }) {
       >
         {props => (
           <View>
-            <Text style={globalStyles.titleText}>Bổ sung vật tư</Text>
             <TextInput
               style={globalStyles.input}
-              placeholder='Supply name'
+              placeholder='Ngày'
               onChangeText={props.handleChange('Name')}
               onBlur={props.handleBlur('Name')} 
               value={props.values.name}
@@ -60,7 +54,7 @@ export default function ShiftSupplyForm({ addSupply }) {
             <TextInput
               style={globalStyles.input}
               multiline minHeight={60}
-              placeholder='Unit'
+              placeholder='Ca'
               onChangeText={props.handleChange('unit')}
               onBlur={props.handleBlur('unit')}
               value={props.values.unit}
@@ -69,19 +63,19 @@ export default function ShiftSupplyForm({ addSupply }) {
 
             <TextInput 
               style={globalStyles.input}
-              placeholder='Quantity'
-              onChangeText={props.handleChange('quantity')}
-              onBlur={props.handleBlur('quantity')} 
-              value={props.values.quantity}
+              placeholder='Stewardess quantity'
+              onChangeText={props.handleChange('stewardess_quantity')}
+              onBlur={props.handleBlur('stewardess_quantity')} 
+              value={props.values.stewardess_quantity}
               keyboardType='numeric'
             />
-            <Text style={globalStyles.errorText}>{props.touched.quantity && props.errors.quantity}</Text>
+            <Text style={globalStyles.errorText}>{props.touched.stewardess_quantity && props.errors.stewardess_quantity}</Text>
             
             <TextInput 
               style={globalStyles.input}
-              placeholder='Creator'
-              onChangeText={props.handleChange('creator')}
-              onBlur={props.handleBlur('creator')} 
+              placeholder='Real quantity'
+              onChangeText={props.handleChange('real_quantity')}
+              onBlur={props.handleBlur('real_quantity')} 
               value={props.values.real_quantity}
               keyboardType='numeric'
             />

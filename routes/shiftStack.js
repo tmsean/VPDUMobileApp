@@ -3,6 +3,8 @@ import React from 'react';
 import Header from '../shared/header';
 import Shift from '../screens/shift';
 import ShiftDetails from '../screens/shiftDetails';
+import ShiftSupply from '../screens/shiftSupply';
+import ShiftSupplyForm from '../screens/shiftSupplyForm';
 
 const screens = {
   Shift: {
@@ -15,10 +17,16 @@ const screens = {
   },
   ShiftDetails: {
     screen: ShiftDetails,
-    navigationOptions: {
-      title: 'Shift Details',
+    navigationOptions: ({ navigation }) => {
+      return {title: 'Shift Details'}
     }
   },
+  ShiftSupply: {
+    screen: ShiftSupply,
+    navigationOptions: ({ navigation }) => {
+      return {title: 'Shift Supplies'}
+    }
+  }
 }
 
 const ShiftStack = createStackNavigator(screens, {

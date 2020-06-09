@@ -29,7 +29,7 @@ export const globalStyles = StyleSheet.create({
     textAlign: 'center',
   },
   button: {
-    color: '#0BC586'
+    color: '#0BC586',
   },
 });
 

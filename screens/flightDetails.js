@@ -36,6 +36,7 @@ export default function FlightDetails({ navigation }) {
     },
   ]);
   const item = flights.find(item => item.id === navigation.getParam( 'item', 'id'));
+  const flight_number = item.flight_No;
   const from_date = new Date();
 
 
@@ -60,9 +61,10 @@ export default function FlightDetails({ navigation }) {
         <Text>{ "From date: " + item.from_date } - { "To date: " + item.to_date }</Text>
         <Button
           title="Supplies"
+          color = "#0BC586"
           onPress={() => {
             // Pass params back to home screen
-            navigation.navigate('Supply', flight_number);
+            navigation.navigate('Supply', {'item': 'flight_No'});
           }}
         />
         <Text></Text>

@@ -30,7 +30,6 @@ export default function ShiftDetails({ navigation }) {
         },
       ]);
   const shift = shifts.find(item => item.id === navigation.getParam( 'item', 'id'));
-  const id = navigation.getParam( 'item', 'id');
 
 
   return (
@@ -45,8 +44,7 @@ export default function ShiftDetails({ navigation }) {
         <Button
         style={globalStyles.button}
         title = "Supplies"
-        color = "#0BC586"
-        onPress = {() => navigation.push("Suppy")}
+        onPress = {() => navigation.navigate("ShiftSupply", {"shift": "shift_no"})}
         accessibilityLabel="Learn more about this purple button" ></Button>
     </View>
   );

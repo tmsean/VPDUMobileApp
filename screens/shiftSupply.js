@@ -47,21 +47,20 @@ export default function ShiftSupply({navigation}) {
         creator: 'Nhân viên QLKH'
       },
   ]);
-  const addSupply = (supply) => {
-    supply.id = Math.random().toString();
-    setSupplies((currentSupplies) => {
-      return [supply, ...currentSupplies];
-    });
-    setModalOpen(false);
-  };
+  // const addSupply = (supply) => {
+  //   supply.id = Math.random().toString();
+  //   setSupplies((currentSupplies) => {
+  //     return [supply, ...currentSupplies];
+  //   });
+  //   setModalOpen(false);
+  // };
   
   const shift = shifts.find(item => item.id === navigation.getParam('shift', 'id'));
-  const flight_number = navigation.getParam('flight_number');
 
   return (
     <View style={globalStyles.container}>
 
-      <Modal visible={modalOpen} animationType='slide'>
+      {/* <Modal visible={modalOpen} animationType='slide'>
           <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={styles.modalContent}>
               <MaterialIcons 
@@ -80,9 +79,9 @@ export default function ShiftSupply({navigation}) {
           size={24} 
           style={styles.modalToggle}
           onPress={() => setModalOpen(true)} 
-        />
+        /> */}
 
-      <Text>Danh sách vật tư ca  {shift.shift_no} ngày {shift.date}</Text>
+      <Text>Danh sách vật tư ca ngày {shift.date}</Text>
       <FlatList data={supplies} renderItem={({ item }) => (
         <TouchableOpacity onPress={() => navigation.navigate('shiftSupplyDetails', {item: item.id})}>
           <Card>

@@ -4,7 +4,7 @@ import { globalStyles, images } from '../styles/global';
 import Card from '../shared/card';
 
 
-export default function SupplyDetails({ navigation }) {
+export default function ShiftSupplyDetails({ navigation }) {
     const [supplies, setSupplies] = useState([
         {
           id: 'NCH337E',
@@ -22,6 +22,7 @@ export default function SupplyDetails({ navigation }) {
           },
       ]);
   const supply = supplies.find(item => item.id === navigation.getParam( 'item', 'id'));
+  const shift = shifts.find(item => item.id === navigation.getParam('shift', 'id'));
   const id = navigation.getParam( 'item', 'id');
 
 
